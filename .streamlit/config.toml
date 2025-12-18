@@ -1,0 +1,7 @@
+[theme]
+base = "light"
+primaryColor = "#003F63"            # Daylight Blue
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F7F8F9" # Grey
+textColor = "#01293D"               # Midnight Blue
+font = "sans serif"

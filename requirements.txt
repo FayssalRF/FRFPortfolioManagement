@@ -1,4 +1,3 @@
-openpyxl
-st-gsheets-connection
+streamlit
 pandas
-pydeck
+st-gsheets-connection

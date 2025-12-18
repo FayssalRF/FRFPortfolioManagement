@@ -113,8 +113,9 @@ def customers_tab():
                     st.cache_data.clear()
                     st.success("Kunde tilføjet og gemt permanent")
                 except Exception as e:
-                    st.warning("Kunde tilføjet lokalt, men kunne ikke gemmes til Google Sheet endnu.")
-                    st.caption(str(e))
+                    st.error("Kunne ikke gemme til Google Sheet. Se fejlen nedenfor:")
+                    st.exception(e)
+                    st.stop()
 
                 st.session_state.customers_df = df
                 st.rerun()

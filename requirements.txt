@@ -1,1 +1,4 @@
+openpyxl
 st-gsheets-connection
+pandas
+pydeck

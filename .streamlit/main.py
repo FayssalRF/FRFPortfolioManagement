@@ -2,6 +2,32 @@ import streamlit as st
 from ui.styles import inject_brand_css
 from tabs.dashboard import dashboard_tab
 from tabs.customers import customers_tab
+import streamlit as st
+
+def login():
+    if "logged_in" not in st.session_state:
+        st.session_state.logged_in = False
+
+    if not st.session_state.logged_in:
+        st.title("Login")
+
+        user = st.text_input("Username")
+        pwd = st.text_input("Password", type="password")
+
+        if st.button("Log ind", type="primary"):
+            if (
+                user == st.secrets["auth"]["username"]
+                and pwd == st.secrets["auth"]["password"]
+            ):
+                st.session_state.logged_in = True
+                st.rerun()
+            else:
+                st.error("Forkert login")
+
+        st.stop()
+
+login()
+
 
 st.set_page_config(page_title="CS Portfolio", layout="wide")
 inject_brand_css()
